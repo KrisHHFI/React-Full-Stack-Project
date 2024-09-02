@@ -7,9 +7,15 @@ function App() {
   };
 
   return (
-    <div className="addNoteButton" onClick={addNoteButtonPress}>
-      <img src={plusImage} className="plusImage" alt="Plus Image" />
+    <div>
+      <div className="mainTitle">
+        All Notes
+      </div>
+      <div className="addNoteButton" onClick={addNoteButtonPress}>
+        <img src={plusImage} className="plusImage" alt="Plus Image" />
+      </div>
     </div>
+
   );
 }
 

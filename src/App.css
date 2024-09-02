@@ -12,6 +12,12 @@
   width: 5vw;
 }
 
+.mainTitle {
+  font-size: clamp(40px, 4vw, 60px);
+  font-weight: bold;
+  text-align: center;
+}
+
 .plusImage {
   height: 4vw;
   min-height: 50px;
