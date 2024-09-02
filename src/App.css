@@ -7,15 +7,38 @@
   justify-content: center;
   min-height: 60px;
   min-width: 60px;
-  position: absolute;
+  position: fixed;
   right: 3vw;
   width: 5vw;
+}
+
+.app {
+}
+
+.mainContent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .mainTitle {
   font-size: clamp(40px, 4vw, 60px);
   font-weight: bold;
   text-align: center;
+}
+
+.note {
+  border: 1px solid black;
+  height: 250px;
+  margin: 10px;
+  width: 250px;
+}
+
+.noteContainer {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
 }
 
 .plusImage {
