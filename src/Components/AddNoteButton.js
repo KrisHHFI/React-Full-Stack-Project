@@ -1,9 +1,18 @@
 import React from 'react';
 import plusImage from '../plusImage.png';
 
-function AddNoteButton() {
+function AddNoteButton({ setNotes, notes }) {
+    const addNewNote = () => {
+        const newNote = {
+            noteTitle: "New Note",
+            noteText: "To do..",
+        };
+        setNotes([...notes, newNote]);
+    };
+
     const addNoteButtonPress = () => {
         console.log("Add note button pressed");
+        addNewNote();
     };
 
     return (

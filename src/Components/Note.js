@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Note({ noteTitle = "New note", noteText = "What's your note about?" }) {
+function Note({ noteTitle, noteText,}) {
     return (
         <div className="note">
             <div className="noteTitle">
