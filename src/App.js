@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import AddNoteButton from './Components/AddNoteButton';
+import { deleteNote } from './BackEnd/DeleteNote';
 import MainTitle from './Components/MainTitle';
 import NotesContainer from './Components/NotesContainer';
 
@@ -21,27 +22,11 @@ function App() {
       .catch(error => console.error('Error fetching notes:', error));
   }, []);
 
-  const deleteNote = (id) => {
-    setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
-
-    // Also delete the note from the backend
-    fetch(`http://localhost:3001/notes/${id}`, {
-      method: 'DELETE',
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Failed to delete note');
-      }
-      console.log(`Note with ID "${id}" deleted`);
-    })
-    .catch(error => console.error('Error deleting note:', error));
-  };
-
   return (
     <div className="app">
       <div className="mainContent">
         <MainTitle />
-        <NotesContainer notes={notes} deleteNote={deleteNote} />
+        <NotesContainer notes={notes} deleteNote={(id) => deleteNote(id, setNotes)} />
       </div>
       <AddNoteButton setNotes={setNotes} notes={notes} />
     </div>

@@ -19,7 +19,7 @@
   align-items: center;
   background-color: red;
   cursor: pointer;
-  display: flex;
+  display: none;
   height: 25px;
   justify-content: center;
   opacity: 0;
@@ -55,6 +55,7 @@
 }
 
 .note:hover .deleteNoteButton {
+  display: flex;
   opacity: 1;
 }
 
