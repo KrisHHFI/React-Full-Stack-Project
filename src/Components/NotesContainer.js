@@ -8,7 +8,7 @@ function NotesContainer({ notes = [] }) {
   return (
     <div className="noteContainer">
       {notes.map((note, index) => (
-        <Note key={index} noteTitle={note.title} noteText={note.content} />
+        <Note key={index} noteTitle={note.noteTitle} noteText={note.noteText} />
       ))}
     </div>
   );

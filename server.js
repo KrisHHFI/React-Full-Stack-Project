@@ -19,8 +19,8 @@ db.serialize(() => {
     db.run(`
         CREATE TABLE IF NOT EXISTS Notes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            title TEXT NOT NULL,
-            content TEXT NOT NULL
+            noteTitle TEXT NOT NULL,
+            noteText TEXT NOT NULL
         )
     `);
 });
@@ -39,7 +39,7 @@ app.get('/notes', (req, res) => {
 app.post('/notes', (req, res) => {
     const { noteTitle, noteText } = req.body;
     db.run(
-        'INSERT INTO Notes (title, content) VALUES (?, ?)',
+        'INSERT INTO Notes (noteTitle, noteText) VALUES (?, ?)',
         [noteTitle, noteText],
         function (err) {
             if (err) {
