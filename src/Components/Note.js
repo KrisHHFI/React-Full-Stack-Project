@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import trashBinImage from '../TrashBinImage.png';
+import trashBinImage from '../Assets/TrashBinImage.png';
 
 
 function Note({ id, noteTitle, noteText, deleteNote }) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import plusImage from '../plusImage.png';
+import plusImage from '../Assets/plusImage.png';
 import { addNote } from '../BackEnd/AddNote';
 
 function AddNoteButton({ setNotes, notes }) {
