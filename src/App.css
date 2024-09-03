@@ -18,6 +18,7 @@
 .deleteNoteButton {
   align-items: center;
   background-color: red;
+  cursor: pointer;
   display: flex;
   height: 25px;
   justify-content: center;

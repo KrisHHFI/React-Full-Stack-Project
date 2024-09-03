@@ -25,6 +25,17 @@ db.serialize(() => {
     `);
 });
 
+// Route to delete a note by ID
+app.delete('/notes/:id', (req, res) => {
+    const { id } = req.params;
+    db.run('DELETE FROM Notes WHERE id = ?', id, function (err) {
+        if (err) {
+            return res.status(500).json({ error: 'Failed to delete note' });
+        }
+        res.json({ success: true });
+    });
+});
+
 // Route to get notes
 app.get('/notes', (req, res) => {
     db.all('SELECT * FROM Notes', (err, rows) => {

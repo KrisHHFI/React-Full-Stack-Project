@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import trashBinImage from '../TrashBinImage.png';
 
-function Note({ noteTitle, noteText }) {
+
+function Note({ id, noteTitle, noteText, deleteNote }) {
     const [title, setTitle] = useState(noteTitle);
     const [text, setText] = useState(noteText);
 
@@ -11,6 +12,10 @@ function Note({ noteTitle, noteText }) {
 
     const handleTextChange = (e) => {
         setText(e.target.value);
+    };
+
+    const handleDelete = () => {
+        deleteNote(id);
     };
 
     return (
@@ -25,8 +30,8 @@ function Note({ noteTitle, noteText }) {
                 value={text}
                 onChange={handleTextChange}
             />
-            <div className="deleteNoteButton">
-            <img src={trashBinImage} className="trashBinImage" alt="Trash bin image" />
+            <div className="deleteNoteButton" onClick={handleDelete}>
+                <img src={trashBinImage} className="trashBinImage" alt="Trash bin image" />
             </div>
         </div>
     );
