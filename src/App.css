@@ -15,6 +15,18 @@
 
 .app {}
 
+.deleteNoteButton {
+  align-items: center;
+  background-color: red;
+  display: flex;
+  height: 25px;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25px;
+}
+
 .mainContent {
   align-items: center;
   display: flex;
@@ -30,6 +42,7 @@
 .note {
   border: 1px solid black;
   height: 250px;
+  position: relative;
   margin: 10px;
   width: 250px;
 }
@@ -65,5 +78,10 @@
   height: 4vw;
   min-height: 50px;
   min-width: 50px;
+  width: auto;
+}
+
+.trashBinImage {
+  height: 20px;
   width: auto;
 }
