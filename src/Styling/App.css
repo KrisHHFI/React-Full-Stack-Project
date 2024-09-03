@@ -13,7 +13,11 @@
   width: 5vw;
 }
 
-.app {}
+.app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 
 .deleteNoteButton {
   align-items: center;
@@ -28,12 +32,6 @@
   top: 0;
   transition: opacity 0.3s ease;
   width: 25px;
-}
-
-.mainContent {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
 }
 
 .mainTitle {

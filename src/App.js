@@ -15,10 +15,8 @@ function App() {
 
   return (
     <div className="app">
-      <div className="mainContent">
-        <MainTitle />
-        <NotesContainer notes={notes} deleteNote={(id) => deleteNote(id, setNotes)} />
-      </div>
+      <MainTitle />
+      <NotesContainer notes={notes} deleteNote={(id) => deleteNote(id, setNotes)} />
       <AddNoteButton setNotes={setNotes} notes={notes} />
     </div>
   );
