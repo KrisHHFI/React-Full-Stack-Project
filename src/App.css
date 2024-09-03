@@ -13,8 +13,7 @@
   width: 5vw;
 }
 
-.app {
-}
+.app {}
 
 .mainContent {
   align-items: center;
@@ -31,9 +30,28 @@
 .note {
   border: 1px solid black;
   height: 250px;
-  padding: 5px;
   margin: 10px;
   width: 250px;
+}
+
+.note input {
+  border: 0;
+  font-weight: bold;
+  height: 15px;
+  padding: 0;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.note textarea {
+  border: 0;
+  box-sizing: border-box;
+  height: calc(100% - 25px);
+  padding: 5px;
+  resize: none;
+  width: 100%;
 }
 
 .noteContainer {
@@ -41,12 +59,6 @@
   display: flex;
   flex-wrap: wrap;
   max-width: 1000px;
-}
-
-.noteTitle {
-  font-weight: bold;
-  padding: 5px;
-  text-align: center;
 }
 
 .plusImage {
