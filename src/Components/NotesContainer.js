@@ -1,11 +1,14 @@
 import React from 'react';
 import Note from './Note';
 
-function NotesContainer({ notes = [] }) { // Provide a default empty array
+function NotesContainer({ notes = [] }) {
+
+  console.log("NotesContainer notes:" + JSON.stringify(notes, null, 2));
+
   return (
     <div className="noteContainer">
       {notes.map((note, index) => (
-        <Note key={index} noteTitle={note.noteTitle} noteText={note.noteText} />
+        <Note key={index} noteTitle={note.title} noteText={note.content} />
       ))}
     </div>
   );

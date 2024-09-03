@@ -8,12 +8,19 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    // Fetch notes from the backend when the component mounts
     fetch('http://localhost:3001/notes')
       .then(response => response.json())
-      .then(data => setNotes(data.notes)) // Ensure 'notes' key is used here
+      .then(data => {
+        if (data && data.notes) {
+          setNotes(data.notes);
+          //console.log("Notes fetched:", JSON.stringify(data.notes, null, 2));
+        } else {
+          console.error('Unexpected response format:', data);
+        }
+      })
       .catch(error => console.error('Error fetching notes:', error));
   }, []);
+
 
   return (
     <div className="app">
