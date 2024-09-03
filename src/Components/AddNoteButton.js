@@ -2,17 +2,25 @@ import React from 'react';
 import plusImage from '../plusImage.png';
 
 function AddNoteButton({ setNotes, notes }) {
-    const addNewNote = () => {
-        const newNote = {
-            noteTitle: "New Note",
-            noteText: "To do..",
-        };
-        setNotes([...notes, newNote]);
+    const generateUniqueTitle = () => {
+        const baseTitle = "New Note";
+        let newTitle = baseTitle;
+        let count = 1;
+
+        while (notes.some(note => note.noteTitle === newTitle)) {
+            newTitle = `${baseTitle}(${count})`;
+            count++;
+        }
+
+        return newTitle;
     };
 
     const addNoteButtonPress = () => {
-        console.log("Add note button pressed");
-        addNewNote();
+        const newNote = {
+            noteTitle: generateUniqueTitle(),
+            noteText: "To do..",
+        };
+        setNotes([...notes, newNote]);
     };
 
     return (
