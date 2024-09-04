@@ -61,6 +61,29 @@ app.post('/notes', (req, res) => {
     );
 });
 
+// Route to update a note by ID
+app.put('/notes/:id', (req, res) => {
+    const { id } = req.params;
+    const { noteTitle, noteText } = req.body;
+
+    db.run(
+        'UPDATE Notes SET noteTitle = ?, noteText = ? WHERE id = ?',
+        [noteTitle, noteText, id],
+        function (err) {
+            if (err) {
+                return res.status(500).json({ error: 'Failed to update note' });
+            }
+            res.json({ success: true });
+        }
+    );
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Something went wrong!' });
+});
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
