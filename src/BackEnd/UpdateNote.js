@@ -1,3 +1,4 @@
+// Update note in the back end
 export const updateNote = (id, updatedTitle, updatedText) => {
     return fetch(`http://localhost:3001/notes/${id}`, {
         method: 'PUT',

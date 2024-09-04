@@ -1,4 +1,3 @@
-// Function to generate a unique title for a new note
 export const generateUniqueTitle = (notes) => {
     const baseTitle = "New Note";
     let newTitle = baseTitle;
@@ -12,14 +11,13 @@ export const generateUniqueTitle = (notes) => {
     return newTitle;
 };
 
-// Function to add a new note
 export const addNote = (notes, setNotes) => {
     const newNote = {
         noteTitle: generateUniqueTitle(notes),
         noteText: "To do..",
     };
 
-    // Post the new note to the backend
+    // Post the new note to the back end
     fetch('http://localhost:3001/notes', {
         method: 'POST',
         headers: {

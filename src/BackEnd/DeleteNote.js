@@ -2,7 +2,7 @@ export const deleteNote = (id, setNotes) => {
     // Update the notes in the local state
     setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
   
-    // Also delete the note from the backend
+    // Delete the note from the back end
     fetch(`http://localhost:3001/notes/${id}`, {
       method: 'DELETE',
     })

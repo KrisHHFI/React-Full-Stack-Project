@@ -25,7 +25,7 @@ db.serialize(() => {
     `);
 });
 
-// Route to delete a note by ID
+// Delete a note by ID
 app.delete('/notes/:id', (req, res) => {
     const { id } = req.params;
     db.run('DELETE FROM Notes WHERE id = ?', id, function (err) {
@@ -36,7 +36,7 @@ app.delete('/notes/:id', (req, res) => {
     });
 });
 
-// Route to get notes
+// Get all  notes
 app.get('/notes', (req, res) => {
     db.all('SELECT * FROM Notes', (err, rows) => {
         if (err) {
@@ -46,7 +46,11 @@ app.get('/notes', (req, res) => {
     });
 });
 
-// Route to add a new note
+app.get('/', (req, res) => {
+    res.send('Notes API is live.');
+});
+
+// Add a new note
 app.post('/notes', (req, res) => {
     const { noteTitle, noteText } = req.body;
     db.run(
@@ -61,7 +65,7 @@ app.post('/notes', (req, res) => {
     );
 });
 
-// Route to update a note by ID
+// Update a note by ID
 app.put('/notes/:id', (req, res) => {
     const { id } = req.params;
     const { noteTitle, noteText } = req.body;
@@ -88,6 +92,3 @@ app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
 
-app.get('/', (req, res) => {
-    res.send('Welcome to the Notes API!');
-});

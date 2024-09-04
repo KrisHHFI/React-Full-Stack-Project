@@ -1,5 +1,5 @@
-import React from 'react';
 import Note from './Note';
+import React from 'react';
 
 function NotesContainer({ notes = [], deleteNote }) {
 

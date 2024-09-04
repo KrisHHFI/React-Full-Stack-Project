@@ -1,3 +1,4 @@
+// Fetch the notes from the back end
 export const fetchNotes = (setNotes) => {
     fetch('http://localhost:3001/notes')
         .then(response => response.json())
