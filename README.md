@@ -1,6 +1,6 @@
 # React-Full-Stack-Project
 
-<img src="src/Images/GitHub/Weather App Promo Pic 1.PNG"/>
+<img src="FullStackPromoImage1.gif"/>
 
 <br>
 
