@@ -1,6 +1,7 @@
 # React-Full-Stack-Project
 
 <img src="FullStackPromoImage1.gif"/>
+<img src="FullStackPromoImage2.gif"/>
 
 <br>
 
