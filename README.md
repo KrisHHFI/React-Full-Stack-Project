@@ -14,10 +14,13 @@
 Front End
 
 1) Navigate to the project root folder
-2) Run in the terminal: npm start
+2) Run:
+
+       npm start
 
 Back End
 
 1) Navigate to the project root folder
-2) Run in the terminal: node server.js
+2) Run:
 
+       node server.js
