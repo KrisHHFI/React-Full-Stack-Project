@@ -10,8 +10,6 @@
 - Allows the user to create, edit and delete notes
 - Notes are saved locally using SQLite
 
-<br>
-
 ### Launch the App
 Front End
 
